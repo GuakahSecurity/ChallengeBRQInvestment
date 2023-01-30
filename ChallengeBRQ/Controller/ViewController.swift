@@ -40,9 +40,20 @@ class ViewController: UIViewController {
 
         title = "Moedas"
 
+        definirButtonRefresh()
         loadCoins()
     }
+    
+    // MARK: Button Refresh
+    func definirButtonRefresh() {
+        let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(loadCoins))
+        refresh.tintColor = .white
+        refresh.accessibilityLabel = "Refresh"
+        
+        navigationItem.rightBarButtonItem = refresh
+    }
 }
+
 
 //MARK: - Extensão da TableView
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
